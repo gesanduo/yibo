@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-weui/1.2.0/js/jquery-weui.js"></script>
+    <script src="../common.js"></script>
+    <script src="./index.js"></script>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.2/style/weui.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/jquery-weui/1.2.0/css/jquery-weui.min.css">
+    <link href="../index.css" rel="stylesheet" />
+    <script>
+        function setFontSize() {
+            window.baseFontSize = 20;
+            window.baseScreenWidth = 320;
+            var screenWidth = window.screen.width;
+            var html = document.querySelector('html');
+            if (window.parent !== window) {
+                screenWidth = html.offsetWidth;
+                html.className += 'mobile-model';
+            }
+            var fs = parseInt(screenWidth) / window.baseScreenWidth * window.baseFontSize;
+            window.htmlFontSize = (fs > 50 ? 50 : fs);
+            html.style.fontSize = window.htmlFontSize + 'px'
+        }
+        setFontSize();
+        window.onresize = setFontSize;
+    </script>
+    <style>
+     input::-webkit-input-placeholder{
+            color:#cdcdc8;
+        }
+        input::-moz-placeholder{   /* Mozilla Firefox 19+ */
+            color:#cdcdc8;;
+        }
+        input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+            color:#cdcdc8;;
+        }
+        input:-ms-input-placeholder{  /* Internet Explorer 10-11 */ 
+            color:#cdcdc8;;
+        }
+    </style>
+</head>
+<body>
+    <header class='white bg-green'>
+        <div class='h-left' onclick='back()'> </div>
+        <div class='h-content'>个人信息</div>
+        <div class='h-right'></div>
+    </header>
+    <div class="page bg-lightgray user">
+        <div class="bg-white mrb10">
+            <div class="cell edit-head">
+                <div class="cell-l">編輯頭像</div>
+                <div class="cell-r">
+                    <img src="../img/heads.png" alt="" class='head-img'>
+                    <span class="icon-right"></span>
+                </div>
+            </div>
+            <div class="cell jump" type='nick'>
+                <div class="cell-l " >暱稱</div>
+                <div class="cell-r">
+                    <div>未設置</div>
+                    <span class="icon-right"></span>
+                </div>
+            </div>
+            <div class="cell">
+                <div class="cell-l">性別</div>
+                <div class="cell-r">
+                    <input type="text" id='sex-picker' class='cell-input' value='男' readonly/>
+                    <span class="icon-right"></span>
+                </div>
+            </div>
+            <div class="cell">
+                <div class="cell-l">生日</div>
+                <div class="cell-r">
+                    <input type="text" id='datetime-picker' class='cell-input' placeholder='未设置' readonly/>
+                    <span class="icon-right"></span>
+                </div>
+            </div>
+            <div class="cell jump" type='email'>
+                <div class="cell-l">郵箱</div>
+                <div class="cell-r">
+                    <div>未設置</div>
+                    <span class="icon-right"></span>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white mrb10">
+            <div class="cell">
+                <div class="cell-l">手機號</div>
+                <div class="cell-r">
+                    <div>180-2571-1234</div>
+                </div>
+            </div>
+            <div class="cell">
+                <div class="cell-l">註冊時間</div>
+                <div class="cell-r">
+                    <div>2018-03-06</div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white green cell center unlogin">
+            退出登錄
+        </div>
+    </div>
+    <div class="mask js-mask mask-flex hidden">
+        <div class="container bg-white">
+            <div class="top center">
+                <div class="top-l">X</div>
+                <div class="title">溫馨提示</div>
+            </div>
+            <div class="content">
+                是否退出登錄
+            </div>
+            <div class="btns orange bg-lightgray">
+                <div class="btn cancel">取消</div>
+                <div class="btn submit">確定</div>
+            </div>
+        </div>
+    </div>
+    <div class="mask js-image hidden">
+        <div class="mask-c-b">
+            <div class='item brb'>
+                <label for='image'>拍照</label>
+                <input class='imgInput hidden' type="file" id='image' accept="image/*" capture='camera'>
+            </div>
+            <div class='item mrb10'>
+                <label for='video'>從手機相冊選擇</label>
+                <input class='imgInput hidden' type="file" id='video' accept="image/*" >
+            </div>
+            <div class='orange item mask-cancel'>取消</div>
+        </div>
+    </div>
+</body>
+
+</html>

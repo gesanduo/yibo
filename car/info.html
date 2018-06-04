@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="../index.css" rel="stylesheet" />
+    <link href="./index.css" rel="stylesheet" />
+    <script>
+        function setFontSize() {
+            window.baseFontSize = 20;
+            window.baseScreenWidth = 320;
+            var screenWidth = window.screen.width;
+            var html = document.querySelector('html');
+            if (window.parent !== window) {
+                screenWidth = html.offsetWidth;
+                html.className += 'mobile-model';
+            }
+            var fs = parseInt(screenWidth) / window.baseScreenWidth * window.baseFontSize;
+            window.htmlFontSize = (fs > 50 ? 50 : fs);
+            html.style.fontSize = window.htmlFontSize + 'px'
+        }
+        setFontSize();
+        window.onresize = setFontSize;
+    </script>
+</head>
+<body>
+    <header class='white bg-green'>
+        <div class='h-left' onclick='back()'> </div>
+        <div class='h-content'>停车信息</div>
+        <div class='h-right'></div>
+    </header>
+    <div class="page bg-white car-page">
+        <div class='car-item '>
+            <div class="car-item-l left w50">黑桥街停车场</div>
+            <div class="car-item-r left w50 text-r">MI-66-66</div>
+        </div>
+        <ul class='gray car-info-list'>
+            <li>黑桥街停车场</li>
+            <li>
+                <div class="left w50">進場時間：</div>
+                <div class="left w50 text-r">2018-01-17 08:23</div>
+            </li>
+            <li>
+                <div class="left w50">離開時間：</div>
+                <div class="left w50 text-r">2018-01-17 08:23</div>
+            </li>
+            <li>
+                <div class="left w50">停車時長：</div>
+                <div class="left w50 text-r">01:00</div>
+            </li>
+            <li>
+                <div class="left w50">停車費用：</div>
+                <div class="left w50 text-r">MOP 45</div>
+            </li>
+            <li>
+                <div class="left w50">支付方式：</div>
+                <div class="left w50 text-r">信用卡(4567)</div>
+            </li>    
+            <li class=''>
+                <div class="text-r orange" id='pay'>前往支付</div>
+            </li>
+        </ul>
+    </div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="../common.js"></script>
+<script src="./info.js"></script>
+</html>

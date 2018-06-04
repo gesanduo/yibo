@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>首頁</title>
+    <link href="../index.css" rel="stylesheet" />
+    <link href="./index.css" rel="stylesheet" />
+    <script>
+        function setFontSize() {
+            window.baseFontSize = 20;
+            window.baseScreenWidth = 320;
+            var screenWidth = window.screen.width;
+            var html = document.querySelector('html');
+            if (window.parent !== window) {
+                screenWidth = html.offsetWidth;
+                html.className += 'mobile-model';
+            }
+            var fs = parseInt(screenWidth) / window.baseScreenWidth * window.baseFontSize;
+            window.htmlFontSize = (fs > 50 ? 50 : fs);
+            html.style.fontSize = window.htmlFontSize + 'px'
+        }
+        setFontSize();
+        window.onresize = setFontSize;
+    </script>
+</head>
+<body>
+    <header class='white bg-green'>
+        <!-- <div class='h-left' ></div> -->
+        <div class='h-content'>易泊車</div>
+        <div class='h-right forget'>忘記密碼</div>
+    </header>
+    <div class="page pdlr5">
+        <div class='head h30 center'>
+            <img src="../img/logo.png" alt="" class="logo">
+        </div>
+        <div class="form">
+            <div class="input_box">
+                <input type="tel" maxlength="11"id='telphoto' placeholder="請輸入手機號">
+            </div>
+            <div class="input_box">
+                <input show='1' type="password" placeholder="输入账号密码">
+                <span class='showPassword'>显示</span>
+            </div>
+        </div>
+        <div class="button center bg-orange white mrt2">
+            登录
+        </div>
+        <a class='orange none loginB mrt1' href='./register.html'>註冊</a>
+        <a class='loginB orange none ' href='../index.html'>跳過登錄，搶先體驗 &gt;</a>
+    </div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="../common.js"></script>
+<script src="./index.js"></script>
+</html>

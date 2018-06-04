@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>消费记录</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.2/style/weui.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/jquery-weui/1.2.0/css/jquery-weui.min.css">
+    <link href="../index.css" rel="stylesheet" />
+    <link href="./index.css" rel="stylesheet" />
+    <script>
+        function setFontSize() {
+            window.baseFontSize = 20;
+            window.baseScreenWidth = 320;
+            var screenWidth = window.screen.width;
+            var html = document.querySelector('html');
+            if (window.parent !== window) {
+                screenWidth = html.offsetWidth;
+                html.className += 'mobile-model';
+            }
+            var fs = parseInt(screenWidth) / window.baseScreenWidth * window.baseFontSize;
+            window.htmlFontSize = (fs > 50 ? 50 : fs);
+            html.style.fontSize = window.htmlFontSize + 'px'
+        }
+        setFontSize();
+        window.onresize = setFontSize;
+    </script>
+</head>
+<body>
+    <header class='white bg-green'>
+        <div class='h-left' onclick='back()'> </div>
+        <div class='h-content'>消费记录</div>
+        <div class='h-right'></div>
+    </header>
+    <div class="page bg-lightgray car-index">
+       <ul class="tab bg-white">
+           <li class='date-s'><label for='date-s'>日期</label> 
+               <input id='date-s' class='hidden'>
+           </li>
+           <li class='car-s'><label for='car-s'>停車場<span class='sanjiao saojiao1'></span></label> 
+                <input id='car-s' class='hidden'>
+           </li>
+           <li class='stauts-s'>狀態<span class='sanjiao'></span>
+           </li>
+       </ul>
+       <ul class="hidden stauts-select">
+            <li class='item current ' type='pay'>已支付 <span class='icon-tick'></span></li>
+            <li class='item' type='nopay'>未支付<span class='icon-tick'></span></li>
+       </ul>
+       <div class='car-list'>
+            <a class='none' href="./info.html">
+                <div class="car-list-t flex-box">
+                    <div class="car-info-i">黑橋停車場</div>
+                    <div class="car-info-i">MI-66-66</div>
+                    <div class="car-info-i text-r green">已支付</div>
+                </div>
+                <div class="car-list-b gray">
+                    黑橋停車場黑橋停車場
+                </div>
+            </a>
+            <a class='none' href="./info.html">
+                <div class="car-list-t flex-box">
+                    <div class="car-info-i">黑橋停車場</div>
+                    <div class="car-info-i">MI-66-66</div>
+                    <div class="car-info-i text-r orange">未支付</div>
+                </div>
+                <div class="car-list-b gray">
+                    黑橋停車場黑橋停車場
+                </div>
+            </a>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery-weui/1.2.0/js/jquery-weui.js"></script>
+<script src="../common.js"></script>
+<script src="./index.js"></script>
+</html>

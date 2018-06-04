@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/jquery-weui/1.2.0/css/jquery-weui.min.css">
+    <link href="./index.css" rel="stylesheet" />
+    <script>
+        function setFontSize() {
+            window.baseFontSize = 20;
+            window.baseScreenWidth = 320;
+            var screenWidth = window.screen.width;
+            var html = document.querySelector('html');
+            if (window.parent !== window) {
+                screenWidth = html.offsetWidth;
+                html.className += 'mobile-model';
+            }
+            var fs = parseInt(screenWidth) / window.baseScreenWidth * window.baseFontSize;
+            window.htmlFontSize = (fs > 50 ? 50 : fs);
+            html.style.fontSize = window.htmlFontSize + 'px'
+        }
+        setFontSize();
+        window.onresize = setFontSize;
+    </script>
+</head>
+<body>
+    <div class="index">
+        <header class='white bg-green' >
+            <!-- <div class='h-left' ></div> -->
+            <div class='h-content'>易泊車</div>
+            <div class='h-content hidden'>我的</div>
+            <div class='h-right'></div>
+        </header>
+        <div class="page  pdb50">
+            <div class='main white bg-white'>
+                <div class="swiper-container h10" data-loop='true' data-space-between='10' data-pagination='.swiper-pagination' data-autoplay="1000">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="http://jqweui.com/dist/demos/images/swiper-1.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="http://jqweui.com/dist/demos/images/swiper-2.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="http://jqweui.com/dist/demos/images/swiper-3.jpg" alt=""></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <div class="shouye-c">
+                    <a class="bg-green shouye-t white none" href="./pay/index.html">
+                        <img src="./img/sdzf.png" alt="">
+                        <p>手動支付</p>
+                    </a>
+                    <a class="bg-orange white none shouye-b mr05" href='./car/index.html'>
+                        <img src="./img/xfjl.png" alt="">
+                        <p>消費記錄查詢</p>
+                    </a>
+                    <a class="bg-orange white none shouye-b" href="./nearCar.html">
+                        <img src="./img/fjcc.png" alt="">
+                        <p>停車場定位</p>
+                    </a>
+                </div>
+            </div>
+            <div class='main hidden bg-lightgray'>
+                <a class="me-t bg-green white none" href='./user/info.html'>
+                    <div class='me-t-l'>
+                        <div class="me-item1">
+                            <img src="./img/heads.png" alt="">
+                        </div>
+                        <div class="me-item2">
+                            <div class='text'>暱稱:未設置</div>
+                            <div>18025714867</div>
+                        </div>
+                    </div>
+                    <div class="me-item3">
+                        <span class="icon-right bg-white"></span>
+                    </div>
+                </a>
+                <div class="me-c bg-white">
+                    <a class="cell none" href='./login/editPassword.html'>
+                        <div class="cell-l">密碼修改</div>
+                        <div class="cell-r">
+                            <span class="icon-right"></span>
+                        </div>
+                    </a>
+                    <a class="cell none" href='./login/editPassword.html'>
+                        <div class="cell-l">銀行卡綁定</div>
+                        <div class="cell-r">
+                            <span class="icon-right"></span>
+                        </div>
+                    </a>
+                    <a class="cell none" href='./login/editPassword.html'>
+                        <div class="cell-l">客服電話</div>
+                        <div class="cell-r">
+                            <span class="icon-right"></span>
+                        </div>
+                    </a>
+                    <a class="cell none" href='javascript:;'>
+                        <div class="cell-l">銀聯質詢</div>
+                        <div class="cell-r">
+                            <span class="icon-right"></span>
+                        </div>
+                    </a>
+                    <a class="cell none" href='./login/editPassword.html'>
+                        <div class="cell-l">APP下載</div>
+                        <div class="cell-r">
+                            <span class="icon-right"></span>
+                        </div>
+                    </a>
+                    <a class="cell none bdnone" href='./about.html'>
+                        <div class="cell-l">關於我們</div>
+                        <div class="cell-r">
+                            <span class="icon-right"></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <ul class='footer bg-white'>
+            <li class='current' index='0'>
+                <img src='./img/sy.png' class='img'>
+                <img src='./img/sy1.png' class='img1'>
+                <p>首頁</p>
+            </li>
+            <li index='1'>
+                <img src='./img/wd1.png' class='img'>
+                <img src='./img/wd.png' class='img1'>
+                <p>我的</p>
+            </li>
+        </ul>
+    </div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery-weui/1.2.0/js/swiper.min.js"></script>
+<script src="./common.js"></script>
+<script src="./index.js"></script>
+</html>

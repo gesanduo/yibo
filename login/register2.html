@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="../index.css" rel="stylesheet" />
+    <script>
+        function setFontSize() {
+            window.baseFontSize = 20;
+            window.baseScreenWidth = 320;
+            var screenWidth = window.screen.width;
+            var html = document.querySelector('html');
+            if (window.parent !== window) {
+                screenWidth = html.offsetWidth;
+                html.className += 'mobile-model';
+            }
+            var fs = parseInt(screenWidth) / window.baseScreenWidth * window.baseFontSize;
+            window.htmlFontSize = (fs > 50 ? 50 : fs);
+            html.style.fontSize = window.htmlFontSize + 'px'
+        }
+        setFontSize();
+        window.onresize = setFontSize;
+    </script>
+</head>
+<body>
+    <header class='white bg-green'>
+        <div class='h-left' onclick='back()'> </div>
+        <div class='h-content'>賬戶註冊</div>
+        <div class='h-right'></div>
+    </header>
+    <div class="page pdlr5 register2">
+        <div class="form pdt2">
+            <div class="input_box">
+                <input id='password1' type="tel" placeholder="请设置账户密码">
+            </div>
+            <div class="input_box">
+                <input id='password2' type="password" show='1'  placeholder="重複輸入賬戶密碼">
+                <span class='showPassword'>顯示</span>
+            </div>
+        </div>
+        <div class="button center bg-orange white mrt2 next-step login">
+            完成並登錄
+        </div>
+    </div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="../common.js"></script>
+<script src="./index.js"></script>
+</html>

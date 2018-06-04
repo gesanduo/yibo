@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="../index.css" rel="stylesheet" />
+    <link href="./index.css" rel="stylesheet" />
+    <script>
+        function setFontSize() {
+            window.baseFontSize = 20;
+            window.baseScreenWidth = 320;
+            var screenWidth = window.screen.width;
+            var html = document.querySelector('html');
+            if (window.parent !== window) {
+                screenWidth = html.offsetWidth;
+                html.className += 'mobile-model';
+            }
+            var fs = parseInt(screenWidth) / window.baseScreenWidth * window.baseFontSize;
+            window.htmlFontSize = (fs > 50 ? 50 : fs);
+            html.style.fontSize = window.htmlFontSize + 'px'
+        }
+        setFontSize();
+        window.onresize = setFontSize;
+    </script>
+</head>
+<body>
+    <header class='white bg-green'>
+        <div class='h-left' onclick='back()'> </div>
+        <div class='h-content'>添加車輛</div>
+        <div class='h-right'></div>
+    </header>
+    <div class="page bg-lightgray addCar">
+        <div class="form pdt2 bg-white">
+            <div class="addcarcon">
+                <input type="text" maxlength="1" class='box-i' index='0'>
+                <input type="text" maxlength="1" class='box-i' index='1'>
+                <div class="line"></div>
+                <input type="text" maxlength="1" class='box-i' index='2'>
+                <input type="text" maxlength="1" class='box-i' index='3'>
+                <div class="line"></div>
+                <input type="text" maxlength="1" class='box-i' index='4'>
+                <input type="text" maxlength="1" class='box-i mr0' index='5'>
+            </div>
+            <p class='gray'>
+                車位不夠6位的用"*"代替
+            </p>
+        </div>
+        <div class="button center bg-orange white mrt2 bind">
+            立即綁定
+        </div>
+        <a href="../car/index.html" class="none orange loginB">跳過</a>
+    </div>
+    <div class="mask js-mask js-car-mask mask-flex hidden">
+        <div class="container bg-white">
+            <div class="top center">
+                <div class="top-l">X</div>
+                <div class="title">溫馨提示</div>
+            </div>
+            <div class="content">
+                是否前往綁定支付卡號
+            </div>
+            <div class="btns orange bg-lightgray">
+                <div class="btn cancel">取消</div>
+                <div class="btn submit">確定</div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="../common.js"></script>
+<script src="./index.js"></script>
+</html>

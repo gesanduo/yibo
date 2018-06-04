@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="../index.css" rel="stylesheet" />
+    <script>
+        function setFontSize() {
+            window.baseFontSize = 20;
+            window.baseScreenWidth = 320;
+            var screenWidth = window.screen.width;
+            var html = document.querySelector('html');
+            if (window.parent !== window) {
+                screenWidth = html.offsetWidth;
+                html.className += 'mobile-model';
+            }
+            var fs = parseInt(screenWidth) / window.baseScreenWidth * window.baseFontSize;
+            window.htmlFontSize = (fs > 50 ? 50 : fs);
+            html.style.fontSize = window.htmlFontSize + 'px'
+        }
+        setFontSize();
+        window.onresize = setFontSize;
+    </script>
+    <style>
+        .nick_input{
+            border:none;
+            outline: none;
+            background: white;
+            height:2rem;
+            line-height: 2rem;
+            margin-top:.5rem;
+            width:100%;
+            padding-left:.5rem;
+        }
+        input::-webkit-input-placeholder{
+            color:#cdcdc8;
+        }
+        input::-moz-placeholder{   /* Mozilla Firefox 19+ */
+            color:#cdcdc8;;
+        }
+        input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+            color:#cdcdc8;;
+        }
+        input:-ms-input-placeholder{  /* Internet Explorer 10-11 */ 
+            color:#cdcdc8;;
+        }
+    </style>
+</head>
+<body>
+    <header class='white bg-green'>
+        <div class='h-left' onclick='back()'> </div>
+        <div class='h-content'>個人暱稱</div>
+        <div class='h-right save'>保存</div>
+    </header>
+    <div class="page bg-lightgray">
+        <div class="form">
+            <input type="text" class='nick_input' placeholder="">
+        </div>
+    </div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="../common.js"></script>
+<script src="./nick.js"></script>
+</html>

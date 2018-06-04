@@ -1,0 +1,160 @@
+.car-info-list li{
+    height:1.5rem;
+    line-height: 1.5rem;
+}
+.car-page{
+    padding:.5rem;
+}
+.car-item{
+    height: 2rem;
+    line-height: 2rem;
+}
+.tab{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: row;
+    height:2rem;
+    line-height: 2rem;
+    width:100%;
+}
+.stauts-select{
+    position: absolute;
+    top:2rem;
+    bottom:0;
+    left:0;
+    width:100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index:1;
+}
+.stauts-select li{
+    height:2rem;
+    line-height: 2rem;
+    padding:0 1rem;
+    position: relative;
+    background: white;
+    border-top:1px solid #ccc;
+}
+.stauts-select li.current{
+    color:orange;
+}
+.icon-tick{
+    position: absolute;
+    display: none;
+}
+.current .icon-tick{
+    display: block;
+}
+.tab li{
+    flex:1;
+    height:2rem;
+    line-height: 2rem;
+    text-align: center;
+    position: relative;
+}
+.car-list{
+    position: absolute;
+    top:2rem;
+    bottom:0;
+    padding:0 .5rem;
+    left:0;
+    width:100%;
+    box-sizing: border-box;
+}
+.car-list a{
+    display: block;
+    margin-top:.5rem;
+    background-color: white;
+    padding:0 .5rem;
+    color:black;
+}
+
+.car-info-i{
+    flex:1;
+    height:2rem;
+    line-height: 2rem;
+}
+.car-list-t{
+    border-bottom:1px solid #ccc;
+}
+.car-list-b{
+    height:2rem;
+    line-height: 2rem;
+}
+
+.pay-t{
+    height:2rem;
+    padding-left:.5rem;
+    padding-right:3rem;
+    position: relative;
+    border-radius: 2px;
+    margin:.5rem .3rem;
+}
+.pay-t input{
+    outline: none;
+    height:2rem;
+    line-height:2rem;
+    border:none;
+    width:100%;
+}
+.out{
+    position: absolute;
+    right: .25rem;
+    top: 0;
+    line-height: 2rem;
+}
+.pay .car-info-list{
+    padding:0 .5rem;
+}
+.weui-picker-modal{
+    height:10rem;
+}
+.weui-picker-modal.datetime-picker .picker-items{
+    justify-content: space-between !important;
+    height:7.5rem;
+    padding:.5rem;
+}
+.weui-picker-modal .picker-item{
+    height:2.5rem;
+    line-height: 2.5rem;
+    font-size: .8rem;
+}
+.weui-picker-modal .picker-center-highlight:after,.weui-picker-modal .picker-center-highlight:before{
+    background-color: white !important;
+}
+.icon-tick{
+    display: none;
+    background-image: url(../img/tick.png);
+    position: absolute;
+    width: .8rem;
+    height: .8rem;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    top: .5rem;
+    right: 1rem;
+}
+.sanjiao{
+    background-image: url(../img/hssj.png);
+    position: absolute;
+    width: .4rem;
+    height: .4rem;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    top: .9rem;
+    right: 1.2rem;
+}
+.saojiao1{
+    right:.9rem;
+}
+.current .sanjiao{
+    background-image: url(../img/cssj.png);
+}
+.stauts-s.current,.car-s.current{
+    color:#F37409;
+}
+.carpicker.weui-picker-modal .picker-items{
+    padding-top:0;
+}
+.carpicker.weui-picker-modal .picker-item{
+    padding:0px !important;
+}

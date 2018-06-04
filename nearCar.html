@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/jquery-weui/1.2.0/css/jquery-weui.min.css">
+    <link href="./index.css" rel="stylesheet" />
+    <script>
+        function setFontSize() {
+            window.baseFontSize = 20;
+            window.baseScreenWidth = 320;
+            var screenWidth = window.screen.width;
+            var html = document.querySelector('html');
+            if (window.parent !== window) {
+                screenWidth = html.offsetWidth;
+                html.className += 'mobile-model';
+            }
+            var fs = parseInt(screenWidth) / window.baseScreenWidth * window.baseFontSize;
+            window.htmlFontSize = (fs > 50 ? 50 : fs);
+            html.style.fontSize = window.htmlFontSize + 'px'
+        }
+        setFontSize();
+        window.onresize = setFontSize;
+    </script>
+</head>
+
+<body>
+    <div class="index">
+        <header class='white bg-green'>
+            <div class='h-left' onclick="back()"></div>
+            <div class='h-content'>車場</div>
+            <div class='h-right'></div>
+        </header>
+        <div class="page bg-white">
+            <ul class='near-list'>
+                <li>
+                    <div class='near-t'>
+                        <div class="fs08">柏力停車場</div>
+                        <div class="darkgray">更新時間：09:30</div>
+                    </div>
+                    <div class="near-b">
+                        <div class="near-b-item">摩托車位 120個</div>
+                        <div class="near-b-item">私家車位（普通）255個</div>
+                    </div>
+                    <div class="near-b">
+                        <div class="near-b-item">電動車位 20個</div>
+                        <div class="near-b-item">私家車位（殘疾）89個</div>
+                    </div>
+                </li>
+                <li>
+                    <div class='near-t'>
+                        <div class="fs08">柏力停車場</div>
+                        <div class="darkgray">更新時間：09:30</div>
+                    </div>
+                    <div class="near-b">
+                        <div class="near-b-item">摩托車位 120個</div>
+                        <div class="near-b-item">私家車位（普通）255個</div>
+                    </div>
+                    <div class="near-b">
+                        <div class="near-b-item">電動車位 20個</div>
+                        <div class="near-b-item">私家車位（殘疾）89個</div>
+                    </div>
+                </li>
+                <li>
+                    <div class='near-t'>
+                        <div class="fs08">柏力停車場</div>
+                        <div class="darkgray">更新時間：09:30</div>
+                    </div>
+                    <div class="near-b">
+                        <div class="near-b-item">摩托車位 120個</div>
+                        <div class="near-b-item">私家車位（普通）255個</div>
+                    </div>
+                    <div class="near-b">
+                        <div class="near-b-item">電動車位 20個</div>
+                        <div class="near-b-item">私家車位（殘疾）89個</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="./common.js"></script>
+
+</html>
