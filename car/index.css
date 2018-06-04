@@ -120,7 +120,7 @@
     font-size: .8rem;
 }
 .weui-picker-modal .picker-center-highlight:after,.weui-picker-modal .picker-center-highlight:before{
-    background-color: white !important;
+    background-color: transparent !important;
 }
 .icon-tick{
     display: none;
