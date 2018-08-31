@@ -33,7 +33,7 @@
             <div class='h-content hidden'>我的</div>
             <div class='h-right'></div>
         </header>
-        <div class="page  pdb50">
+        <div class="page  pdb50 hidden yibo">
             <div class='main white bg-white'>
                 <div class="swiper-container h10 w100" data-loop='true' data-space-between='10' data-pagination='.swiper-pagination' data-autoplay="1000">
                     <div class="swiper-wrapper">
@@ -82,7 +82,7 @@
                             <span class="icon-right"></span>
                         </div>
                     </a>
-                    <a class="cell none" href='./login/editPassword.html'>
+                    <a class="cell none bind_bank" href='javascript:;'>
                         <div class="cell-l">銀行卡綁定</div>
                         <div class="cell-r">
                             <span class="icon-right"></span>
@@ -127,15 +127,30 @@
                 <p>我的</p>
             </li>
         </ul>
-        <div class="mask mask-flex hidden js-mask-phone">
-            <div class="container bg-light mask-radiu">
-                <div class="content1">
-                    是否拨打客服电话
-                </div>
-                <div class="btns">
-                    <div class="btn cancel brt brr">取消</div>
-                    <a href="tel:10086" class="btn blue submit brt">確定</a>
-                </div>
+    </div>
+    <div class="mask mask-flex hidden js-mask-phone">
+        <div class="container bg-light mask-radiu">
+            <div class="content1">
+                是否拨打客服电话
+            </div>
+            <div class="btns">
+                <div class="btn cancel brt brr">取消</div>
+                <a href="tel:10086" class="btn blue submit brt">確定</a>
+            </div>
+        </div>
+    </div>
+    <div class="mask js-mask js-car-mask mask-flex hidden">
+        <div class="container bg-white">
+            <div class="top center">
+                <div class="top-l">X</div>
+                <div class="title">溫馨提示</div>
+            </div>
+            <div class="content">
+                是否前往綁定支付卡號
+            </div>
+            <div class="btns orange bg-lightgray">
+                <div class="btn cancel">取消</div>
+                <div class="btn submit">確定</div>
             </div>
         </div>
     </div>
