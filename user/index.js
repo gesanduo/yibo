@@ -53,7 +53,7 @@ $(function(){
     })
     //关闭相册mask
     $('.js-image').on("click",function(e){
-        if($(e.target).hasClas('mask')){
+        if($(e.target).hasClass('mask')){
             $(this).addClass('hidden');
         }
     })

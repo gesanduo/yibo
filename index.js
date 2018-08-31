@@ -8,4 +8,12 @@ $(function(){
     $(".main .swiper-container").swiper({
         autoplay:3000
     });
+    $(".js-mask-phone").on('click',function(){
+        if(!$(this).hasClass('submit')){
+            $(".js-mask-phone").addClass('hidden');
+        }
+    })
+    $('#makephone').on('click',function(){
+        $('.js-mask-phone').removeClass('hidden');
+    })
 })

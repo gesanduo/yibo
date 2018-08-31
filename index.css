@@ -33,6 +33,9 @@ html,body{
 .bg-gray{
     background-color:#9B9B9B !important;
 }
+.bg-light{
+    background-color: #f9f9f9 !important;
+}
 .orange{
     color: #F37409 !important;
 }
@@ -53,6 +56,9 @@ html,body{
 }
 .darkgray{
     color:#696969 !important;
+}
+.blue{
+    color:#409BFD !important;
 }
 .left{
     float:left;
@@ -235,7 +241,11 @@ header{
     bottom:0;
     left:0;
     width:100%;
+    z-index:999;
     background-color: rgba(0,0,0,.5);
+}
+.mask-radiu{
+    border-radius: 4px;
 }
 .mask-flex{
     display:-webkit-box;
@@ -268,6 +278,10 @@ header{
     font-size:.85rem;
     text-align: center;
 }
+.mask .content1{
+    padding:1rem 1.5rem;
+    text-align: center;
+}
 .mask .btns{
     height: 2rem;
     line-height: 2rem;
@@ -276,6 +290,7 @@ header{
 .mask .btn{
     float:left;
     width:50%;
+    box-sizing: border-box;
 }
 .mask-c-b{
     position: absolute;
@@ -295,6 +310,12 @@ header{
 }
 .brb{
     border-bottom:1px solid #ccc;
+}
+.brt{
+    border-top:1px solid #eee;
+}
+.brr{
+    border-right:1px solid #eee;
 }
 .toolbar .title{
     text-align: left;
@@ -412,6 +433,7 @@ header{
 }
 .me-item1 img{
     width:100%;
+    border-radius: 50%;
 }
 .me-item2{
     padding-left:.5rem;
