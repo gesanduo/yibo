@@ -492,9 +492,10 @@ header{
 .main{
     position: absolute;
     top:0;
-    bottom:0;
+    bottom:50px;
     left:0;
     width:100%;
+    overflow: auto;
 }
 .h10{
     height:10rem;
